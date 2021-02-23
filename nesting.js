@@ -51,7 +51,17 @@ var employees = [
 */
 
 //Code Here
-
+function employeeUpdater(){
+  updatedEmployees = [];
+  for(var prop in employees){
+    if(employees[prop] === 'Theo'){
+      delete employees[prop];
+    }else if(employees[prop] === 'Lorie'){
+      employees[prop].department = 'HR';
+    }
+  }
+  return updatedEmployees;
+}
 
 
 ////////// PROBLEM 2 //////////
