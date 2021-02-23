@@ -52,16 +52,16 @@ var employees = [
 
 //Code Here
 function employeeUpdater(){
-  updatedEmployees = [];
-  for(var prop in employees){
-    if(employees[prop] === 'Theo'){
-      delete employees[prop];
-    }else if(employees[prop] === 'Lorie'){
-      employees[prop].department = 'HR';
+  for(let key in employees){
+    if(employees[key].firstName === 'Theo'){
+      delete employees[key];
+    }else if(employees[key].firstName === 'Lorie'){
+      employees[key].department = 'HR';
     }
   }
-  return updatedEmployees;
+  return employees;
 }
+
 
 
 ////////// PROBLEM 2 //////////
@@ -79,7 +79,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+function removeDuplicates (){
+for(let i = 0; i < workplaceAccidents.length; i++){
+  for(let j = workplaceAccidents.length - 1; j > i; j--){
+    if(workplaceAccidents[i] === workplaceAccidents[j]){
+      workplaceAccidents.splice(j, 1)
+    }
+  }
+}
+return workplaceAccidents;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -107,8 +116,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -149,7 +158,11 @@ var myCar = {
 */
 
 //Code Here
-
+function recordCleaner(){
+  myCar.accidents.forEach(obj => {
+    return obj.atFaultForAccident = false;
+  })
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -168,5 +181,12 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+function looper(){
+  numsArr.forEach(arr => {
+    arr.forEach((num, index) => {
+      arr[index] = num % 2 === 1 ? 'odd' : 'even'
+    })
+  })
+  return numsArr;
+}
 
