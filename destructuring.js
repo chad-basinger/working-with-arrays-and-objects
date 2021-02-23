@@ -21,7 +21,11 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+let {color} =carDetails;
+let {make} = carDetails;
+let {model} = carDetails;
+let {year} = carDetails;
+
 
 
 
@@ -34,8 +38,9 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
-  
+  let {title} = obj;
+  let {firstName} = obj;
+  let {lastName} = obj;
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,7 +59,14 @@ function greeting( obj ) {
 */
 
 //Code Here
+function totalPopulation(myObj){
+  let {utah} = myObj;
+  let {california} = myObj;
+  let {texas} = myObj;
+  let {arizona} = myObj;
 
+  return utah + california + texas + arizona;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -68,7 +80,14 @@ function greeting( obj ) {
 */
 
 //Code Here
+function ingredients(newObj){
+  let {carb} = newObj;
+  let {fat} = newObj;
+  let{protein} = newObj;
 
+  newArray = [carb, fat, protein];
+  return newArray;
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,7 +105,15 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function largeNumbers({first, second, third}) {
+  if(first < second && first < third){
+    return first;
+  }else if (second < first && second < third){
+    return second;
+  }else {
+    return third;
+  }
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +125,15 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function numberGroups({a, b, c}){
+  let result = [];
+  if(a.length > b.length && a.length > c.length){
+    result = a;
+  }else if(b.length > a.length && b.length > c.length){
+    result = b;
+  }else {
+    result = c;
+  }
+  return result;
+}
 
